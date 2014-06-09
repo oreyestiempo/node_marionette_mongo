@@ -1,0 +1,1 @@
+{"ts":1402336072020,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"define([\n  'lib/backbone',\n  'lib/backbone.marionette',\n  'lib/underscore'],\n  function(Backbone, Marionette, _) {\n    var MarionetteApplication = new Marionette.Application();\n    return MarionetteApplication;\n  }\n);\n"]],"start1":0,"start2":0,"length1":0,"length2":218}]],"length":218}
