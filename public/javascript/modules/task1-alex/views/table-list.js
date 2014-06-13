@@ -6,8 +6,21 @@ define([
     function(Backbone, _, ItemListView, template) {
         var ListView = Backbone.Marionette.CompositeView.extend({
             template: _.template(template),
+            
             itemView: ItemListView,
-            itemViewContainer: '#table-list tbody'
+            
+            itemViewContainer: '#table-list tbody',
+            
+            events: {
+                'click button.js-delete': "deleteRecord"
+            },
+            
+            deleteRecord: function(e) {
+                e.stopPropagation();
+                alert("Delete button was clicked");
+                this.model.collection.remove(this.model);
+            }
+            
         });
 
     return ListView;

@@ -5,7 +5,11 @@ define([
 function(Backbone, Marionette, _ ) {
     
     var BookModel = Backbone.Model.extend({
+        
+        count: 1,
+        
         defaults: {
+            idAttribute: "_id",
             title: '',
             author: 'Unknown'
         },
