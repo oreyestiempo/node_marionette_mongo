@@ -3,8 +3,8 @@ define([
   'lib/backbone.marionette',
   'lib/underscore',
   'modules/main/views/main',
-  'modules/main/collections/tasks',
-  'modules/main/views/list'],
+  'modules/task1-alex/collections/library',
+  'modules/task1-alex/views/table-list'],
   function(Backbone, Marionette, _, mainView, TasksCollection, ListView) {
     var MarionetteApplication = new Marionette.Application();
 
@@ -16,14 +16,13 @@ define([
 
     MarionetteApplication.addInitializer(function(){
       var collection = new TasksCollection([
-	      {name:"task1_Armando"}, 
-	      {name: "task1_Alejandro"}, 
-	      {name: "task1_Luis"}
+	      {idAttribute: 1,title: 'Javascript',author: 'Alejandro'},
+        {idAttribute: 2,title: 'Javascript',author: 'Sebastian'},            
       ]);
 
-      var mv = new mainView();
+      //var mv = new mainView();
       var lv = new ListView({collection: collection});
-      MarionetteApplication.main.show(mv);
+      //MarionetteApplication.main.show(mv);
       MarionetteApplication.leftList.show(lv);
     });
 
